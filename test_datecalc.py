@@ -22,15 +22,19 @@ def test_duration2():
 
 def test_when1():
     start_date = "21,12,2021"
+    days_between = 0
+    start_date = datetime.strptime(start_date, "%d,%m,%Y")
+    result = when(start_date, days_between)
+    result.strftime("%d,%b,%Y")
+    assert result == datetime.strptime('2021-12-21 00:00:00', "%Y-%m-%d %H:%M:%S")
+
+def test_when2():
+    start_date = "21,12,2021"
     days_between = 5
     start_date = datetime.strptime(start_date, "%d,%m,%Y")
     result = when(start_date, days_between)
     result.strftime("%d,%b,%Y")
-    assert result == '2021-12-26 00:00:00'
-#     print(result)
-
-# test_when1()
-
+    assert result == datetime.strptime('2021-12-26 00:00:00', "%Y-%m-%d %H:%M:%S")
 
 
 # # test if data types in 
