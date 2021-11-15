@@ -4,6 +4,12 @@ from datecalc import duration, when
 def test_func():
     assert 5==5
 
+def test_duration():
+        start_date = "21,12,2021"
+        end_date = "26,12,2021"
+        for obj in (start_date, end_date):
+            assert isinstance(obj, str)
+
 def test_duration1():
         start_date = "21,12,2021"
         end_date = "21,12,2021"
@@ -35,6 +41,9 @@ def test_when2():
     result = when(start_date, days_between)
     result.strftime("%d,%b,%Y")
     assert result == datetime.strptime('2021-12-26 00:00:00', "%Y-%m-%d %H:%M:%S")
+
+
+# test_duration("21,12,2021", "22,12,2021")
 
 
 # # test if data types in 
